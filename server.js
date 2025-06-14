@@ -1,3 +1,5 @@
+// ✅ Fichier mis à jour le 14 juin
+
 require('dotenv').config(); // doit être tout en haut
 
 console.log('⛳ DEBUG .env ->', process.env.OPENAI_API_KEY ? '✅ Clé trouvée' : '❌ Clé MANQUANTE');
