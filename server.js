@@ -80,3 +80,7 @@ app.post('/api/generate-letter', async (req, res) => {
 app.listen(port, () => {
   console.log(`✅ Serveur lancé sur le port ${port}`);
 });
+app.get('/', (req, res) => {
+  res.send('✅ Backend opérationnel ! Essayez POST /api/generate-letter');
+});
+
