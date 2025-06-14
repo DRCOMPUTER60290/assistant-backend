@@ -10,7 +10,9 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 require('dotenv').config(); // ✅ charger les variables d'abord
 
 const app = express();
-const port = 3001;
+//  pour test local const port = 3001;
+// test render
+const port = process.env.PORT || 3001;
 
 // ✅ Ces deux middlewares doivent venir avant les routes
 app.use(cors());
@@ -67,7 +69,12 @@ app.post('/api/generate-letter', async (req, res) => {
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
-
-app.listen(port, () => {
+// test local
+/* app.listen(port, () => {
   console.log(`✅ Serveur lancé sur http://192.168.1.51:${port}`);
+});
+*/
+//test render 
+app.listen(port, () => {
+  console.log(`✅ Serveur lancé sur le port ${port}`);
 });
