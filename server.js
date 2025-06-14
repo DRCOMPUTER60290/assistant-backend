@@ -76,11 +76,12 @@ app.post('/api/generate-letter', async (req, res) => {
   console.log(`✅ Serveur lancé sur http://192.168.1.51:${port}`);
 });
 */
+// Route GET de test pour vérifier que le backend fonctionne
+app.get('/', (req, res) => {
+  res.send('✅ Backend opérationnel ! Essayez POST /api/generate-letter');
+});
 //test render 
 app.listen(port, () => {
   console.log(`✅ Serveur lancé sur le port ${port}`);
-});
-app.get('/', (req, res) => {
-  res.send('✅ Backend opérationnel ! Essayez POST /api/generate-letter');
 });
 
